@@ -70,11 +70,16 @@ function Registration() {
 
   return (
     <div className="container mt-4">
+      <div>
+        <div class="header-logo" style={{fontWeight: '900', fontSize: '40px', display: "flex", justifyContent: "center"}}>
+          📚 SCHOOL APP
+        </div>
+      </div>
       <Row>
         <Col md={{ span: 6, offset: 3 }}>
           <Form onSubmit={handleRegistration}>
-            <Form.Group controlId="username">
-              <Form.Label>Имя:</Form.Label>
+            <Form.Group controlId="username" style={{marginBottom: "20px"}}>
+              <Form.Label style={{fontWeight: '600', fontSize: '20px'}}>Username:</Form.Label>
               <Form.Control
                 type="text"
                 name="username"
@@ -83,8 +88,8 @@ function Registration() {
               />
             </Form.Group>
 
-            <Form.Group controlId="password">
-              <Form.Label>Пароль:</Form.Label>
+            <Form.Group controlId="password" style={{marginBottom: "20px"}}>
+              <Form.Label style={{fontWeight: '600', fontSize: '20px'}}>Password:</Form.Label>
               <Form.Control
                 type="password"
                 name="password"
@@ -93,10 +98,12 @@ function Registration() {
               />
             </Form.Group>
             <div className="button-and-link">
-              <Button variant="primary" type="submit">
-                Зарегестрироваться
+              <Button variant="secondary" type="submit">
+                Sign Up
               </Button>
-              <Link to="/login">Войти в аккаунт</Link>
+              <Button variant="primary" style={{marginLeft: "20px"}}>
+                <Link to="/login" style={{textDecoration: "none", color: "white"}}>Sign In</Link>
+                </Button>
             </div>
           </Form>
         </Col>
