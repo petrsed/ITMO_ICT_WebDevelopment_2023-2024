@@ -47,7 +47,13 @@ class GradeSerializer(serializers.ModelSerializer):
 
 
 class StudentSerializer(serializers.ModelSerializer):
-    # grades_set = GradeSerializer(many=True)
+    grades_set = GradeSerializer(many=True)
+    class Meta:
+        model = Students
+        fields = '__all__'
+
+class StudentAddSerializer(serializers.ModelSerializer):
+    #grades_set = GradeSerializer(many=True)
     class Meta:
         model = Students
         fields = '__all__'
